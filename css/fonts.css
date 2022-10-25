@@ -1,0 +1,323 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-smh8re');
+	src:url('../fonts/icomoon.eot?#iefix-smh8re') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-smh8re') format('woff'),
+		url('../fonts/icomoon.ttf?-smh8re') format('truetype'),
+		url('../fonts/icomoon.svg?-smh8re#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home3:before {
+	content: "\e902";
+}
+
+.icon-office:before {
+	content: "\e903";
+}
+
+.icon-newspaper:before {
+	content: "\e904";
+}
+
+.icon-pencil2:before {
+	content: "\e906";
+}
+
+.icon-quill:before {
+	content: "\e907";
+}
+
+.icon-image:before {
+	content: "\e90d";
+}
+
+.icon-camera:before {
+	content: "\e90f";
+}
+
+.icon-music:before {
+	content: "\e911";
+}
+
+.icon-film:before {
+	content: "\e913";
+}
+
+.icon-pacman:before {
+	content: "\e916";
+}
+
+.icon-file-zip:before {
+	content: "\e92b";
+}
+
+.icon-price-tag:before {
+	content: "\e935";
+}
+
+.icon-price-tags:before {
+	content: "\e936";
+}
+
+.icon-qrcode:before {
+	content: "\e938";
+}
+
+.icon-ticket:before {
+	content: "\e939";
+}
+
+.icon-phone:before {
+	content: "\e942";
+}
+
+.icon-phone-hang-up:before {
+	content: "\e943";
+}
+
+.icon-pushpin:before {
+	content: "\e946";
+}
+
+.icon-location:before {
+	content: "\e947";
+}
+
+.icon-bubbles:before {
+	content: "\e96c";
+}
+
+.icon-bubbles2:before {
+	content: "\e96d";
+}
+
+.icon-user:before {
+	content: "\e971";
+}
+
+.icon-user-plus:before {
+	content: "\e973";
+}
+
+.icon-quotes-left:before {
+	content: "\e977";
+}
+
+.icon-spinner:before {
+	content: "\e97a";
+}
+
+.icon-spinner4:before {
+	content: "\e97d";
+}
+
+.icon-search:before {
+	content: "\e986";
+}
+
+.icon-zoom-in:before {
+	content: "\e987";
+}
+
+.icon-zoom-out:before {
+	content: "\e988";
+}
+
+.icon-cog:before {
+	content: "\e994";
+}
+
+.icon-cogs:before {
+	content: "\e995";
+}
+
+.icon-trophy:before {
+	content: "\e99e";
+}
+
+.icon-leaf:before {
+	content: "\e9a4";
+}
+
+.icon-hammer2:before {
+	content: "\e9a8";
+}
+
+.icon-fire:before {
+	content: "\e9a9";
+}
+
+.icon-bin:before {
+	content: "\e9ac";
+}
+
+.icon-airplane:before {
+	content: "\e9af";
+}
+
+.icon-earth:before {
+	content: "\e9ca";
+}
+
+.icon-attachment:before {
+	content: "\e9cd";
+}
+
+.icon-star-full:before {
+	content: "\e9d9";
+}
+
+.icon-heart:before {
+	content: "\e9da";
+}
+
+.icon-plus:before {
+	content: "\ea0a";
+}
+
+.icon-minus:before {
+	content: "\ea0b";
+}
+
+.icon-info:before {
+	content: "\ea0c";
+}
+
+.icon-blocked:before {
+	content: "\ea0e";
+}
+
+.icon-cross:before {
+	content: "\ea0f";
+}
+
+.icon-checkmark:before {
+	content: "\ea10";
+}
+
+.icon-embed2:before {
+	content: "\ea80";
+}
+
+.icon-share2:before {
+	content: "\ea82";
+}
+
+.icon-mail4:before {
+	content: "\ea86";
+}
+
+.icon-facebook2:before {
+	content: "\ea8d";
+}
+
+.icon-instagram:before {
+	content: "\ea90";
+}
+
+.icon-twitter:before {
+	content: "\ea91";
+}
+
+.icon-youtube:before {
+	content: "\ea97";
+}
+
+.icon-twitch:before {
+	content: "\ea9b";
+}
+
+.icon-vimeo3:before {
+	content: "\ea9e";
+}
+
+.icon-deviantart:before {
+	content: "\eaab";
+}
+
+.icon-steam:before {
+	content: "\eaad";
+}
+
+.icon-steam2:before {
+	content: "\eaae";
+}
+
+.icon-github:before {
+	content: "\eab1";
+}
+
+.icon-tux:before {
+	content: "\eabe";
+}
+
+.icon-apple:before {
+	content: "\eabf";
+}
+
+.icon-android:before {
+	content: "\eac1";
+}
+
+.icon-linkedin:before {
+	content: "\eac8";
+}
+
+.icon-pinterest:before {
+	content: "\ead0";
+}
+
+.icon-file-pdf:before {
+	content: "\eada";
+}
+
+.icon-libreoffice:before {
+	content: "\eade";
+}
+
+.icon-html5:before {
+	content: "\eadf";
+}
+
+.icon-css3:before {
+	content: "\eae1";
+}
+
+.icon-chrome:before {
+	content: "\eae5";
+}
+
+.icon-firefox:before {
+	content: "\eae6";
+}
+
+.icon-IE:before {
+	content: "\eae7";
+}
+
+.icon-opera:before {
+	content: "\eae8";
+}
+
+.icon-safari:before {
+	content: "\eae9";
+}
+
+.icon-mail:before { content: "\e600"; font-size: 1em; color: #fff;}
+
