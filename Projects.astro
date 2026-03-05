@@ -1,0 +1,169 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import NextJS from "./icons/NextJS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    
+  },
+  FIGMA: {
+    name: "Figma",
+    class: "bg-[#003159] text-white",
+    
+  },
+  MAZE: {
+    name: "Maze",
+    class: "bg-[#003159] text-white",
+    
+  },
+  SALESFORCE: {
+    name: "Salesforce",
+    class: "bg-[#003159] text-white",
+    
+  },
+  STORYBOOK: {
+    name: "Storybook",
+    class: "bg-[#003159] text-white",
+    
+  },
+  TABLEAU: {
+    name: "Tableau",
+    class: "bg-[#003159] text-white",
+    
+  },
+  EXCEL: {
+    name: "Excel",
+    class: "bg-[#003159] text-white",
+    
+  },
+  PHOTOSHOP: {
+    name: "Photoshop",
+    class: "bg-[#003159] text-white",
+    
+  },
+  PROJECTMANAGEMENT: {
+    name: "Project Management",
+    class: "bg-[#003159] text-white",
+    
+  },
+  DESIGNSYSTEMS: {
+    name: "Design Systems",
+    class: "bg-black text-white",
+    
+  },
+  PRODUCTDISCOVERY: {
+    name: "Discovery",
+    class: "bg-black text-white",
+    
+  },
+  PRODUCTDELIVERY: {
+    name: "Delivery",
+    class: "bg-black text-white",
+    
+  },
+  DESIGNRESEARCH: {
+    name: "Research",
+    class: "bg-black text-white",
+    
+  },
+  PROTOTYPING: {
+    name: "Prototyping",
+    class: "bg-black text-white",
+    
+  },
+  DATAVIZ: {
+    name: "Data Viz",
+    class: "bg-black text-white",
+    
+  },
+}
+const PROJECTS = [
+  {
+    title: "Global investment offer for App Bci",
+    description:
+      "New product offering for investors who wish to invest in global instruments and assets traded on the New York Stock Exchange though the Bci App.",
+    image: "/projects/pds.jpg",
+    tags: [TAGS.PROJECTMANAGEMENT, TAGS.FIGMA, TAGS.PROTOTYPING, TAGS.DESIGNRESEARCH, TAGS.DATAVIZ],
+  },
+  {
+    title: "Reference model design for world class Design System PDS",
+    description:
+      "New contribution and change management model for the design and development libraries, which soon became a reference for the construction of a world-class Design System PDS, being at the service of all the company's professionals to build digital products and experiences.",
+    image: "/projects/pds.jpg",
+    tags: [TAGS.FIGMA, TAGS.STORYBOOK, TAGS.EXCEL, TAGS.TABLEAU, TAGS.DESIGNSYSTEMS],
+  },
+  {
+    title: "Principal Digital Advice Tool",
+    description:
+      "Digital investment advisory tool for the exclusive use of investment advisors focused on high net worth business segments. This tool contains a linear flow that generates a commercial operation, which is analyzed in detail showing elements such as profitability and detail of the proposal.",
+    image: "/projects/asesoria.jpg",
+    tags: [TAGS.FIGMA, TAGS.SALESFORCE, TAGS.PROTOTYPING, TAGS.DESIGNRESEARCH, TAGS.DATAVIZ,],
+  },
+  {
+    title: "Tool for the management and administration of Principal Digital Advice",
+    description:
+      "Monitoring and management tool for digital advisory operations whose operation works based on an ID code integrated into the reporting service sent to each advised client.",
+    image: "/projects/adm-asesoria.jpg",
+    tags: [TAGS.PROJECTMANAGEMENT, TAGS.FIGMA, TAGS.SALESFORCE, TAGS.DESIGNRESEARCH,],
+  },
+  {
+    title: "Document and Reporting for Principal Digital Advice",
+    description:
+      "Printable digital product that serves as reporting and sales argument to present the digital consulting operation directly to clients. This document contains on its cover an ID code for consultation, monitoring and management of the process.",
+    image: "/projects/documento.jpg",
+    tags: [TAGS.FIGMA, TAGS.PHOTOSHOP, TAGS.PROTOTYPING, TAGS.DESIGNRESEARCH, TAGS.DATAVIZ],
+  },
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Carlos san martín - Product Designer & UX Designer" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-md text-xs ${tag.class} py-1 px-2 `}
+              >
+                
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+

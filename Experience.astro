@@ -1,0 +1,72 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+  {
+    date: "Ene 2025 - Today",
+    title: "Senior UX Designer",
+    company: "2brains part of Acid Labs (Bci)",
+    description:
+      "I led the design stages in the end to end experience for the creation of the Principal Digital Investment Advisory tool to investment advisors, a Widget that was integrated into the Salesforce CRM tool, which generated autonomy in the management of changes and the creation of incremental and scalability with respect to each of the versions of the product. ",
+  },
+  {
+    date: "Nov 2020 - Aug 2024",
+    title: "Senior Product Designer",
+    company: "Principal Chile",
+    description:
+      "I led the design stages in the end to end experience for the creation of the Principal Digital Investment Advisory tool to investment advisors, a Widget that was integrated into the Salesforce CRM tool, which generated autonomy in the management of changes and the creation of incremental and scalability with respect to each of the versions of the product. ",
+  },
+  {
+    date: "May 2022 - May 2025",
+    title: "Chapter Lead",
+    company: "Design System Community SCL",
+    description:
+      "Lead management strategy for the creation and maintenance of the first design systems community of practice at the national level for the Santiago de Chile chapter. This community informs about best practices around design systems and shows local references.",
+  },
+  {
+    date: "Nov 2018 - Nov 2020",
+    title: "Sr. Product Designer",
+    company: "Scotiabank Chile",
+    description:
+      "I designed the creation of end to end experience flows for the new private website for digital banking clients, a channel that had to support the massive migration of about 300k users to this new platform. Together with the research areas, we generate a workflow for the creation of new and better versions of the product based on the needs of the users who adopted this new experience.",
+  },
+  {
+    date: "Apr 2018 - Nov 2018",
+    title: "UX Designer",
+    company: "2brains (Bci)",
+    description:
+      "I participated in the creation of digital experience flows for internal products of the BCI Pyme banking company, where I designed digital products based on the needs of the customer segment. Collaborated directly with research teams to generate product versions in the improvement cycle.",
+  },
+  {
+    date: "Jun 2015 - Feb 2018",
+    title: "Web & UX/UI Designer",
+    company: "INACAP",
+    description:
+      "I developed maintenance tasks for Inacap institutional web portals where the construction of digital products for marketing and communications was required. For systems and information management, I designed and developed Inacap's first Mobile App under optimal development standards and good information practices using languages ​​such as Ionic and Angular.",
+  },
+  {
+    date: "Aug 2014 - Jun 2015 ",
+    title: "Product Designer",
+    company: "Start-up Chile Corfo",
+    description:
+      "I designed visual and digital products based on the needs of the Corfo application portals and the stages of the Startup Chile contest where 1000+ entrepreneurs applied annually. My tasks were also to provide maintenance to web portals and digital access for the community.",
+  },
+  {
+    date: "Feb 2013 - Aug 2014 ",
+    title: "Web Designer",
+    company: "Grupo Taisa",
+    description:
+      "I did web development work for the creation of a web portal and news blog for internal clients using HTML, CSS and Javascript.",
+  },
+
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
