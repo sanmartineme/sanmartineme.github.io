@@ -1,82 +1,812 @@
-<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="description" content="I am Carlos, a Product Designer based in Santiago de Chile, I specialize in the design process for digital products and experiences."><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.4.5"><title>Carlos San Martin Martinez - Product Designer</title><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><link rel="stylesheet" href="/_astro/components.Bt1zYkeA.css" /><script type="module" src="/_astro/hoisted.CfD_V-On.js"></script></head> <body class="relative text-black dark:text-white"> <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
-      bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> <header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2" data-astro-cid-3ef6ksr2> <nav class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center" data-astro-cid-3ef6ksr2> <a class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500" aria-label="experience" href="/#experience" data-astro-cid-3ef6ksr2> Experience </a><a class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500" aria-label="Latest projects" href="/#projects" data-astro-cid-3ef6ksr2> Latest projects </a><a class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500" aria-label="About me" href="/#about-me" data-astro-cid-3ef6ksr2> About me </a><a class="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-500" aria-label="contact" href="mailto:sanmartineme@gmail.com" data-astro-cid-3ef6ksr2> Contact </a> <div class="relative ml-1 mr-1" data-astro-cid-x3pjskd3> <button id="theme-toggle-btn" class="appearance-none border-none flex hover:scale-125 transition" data-astro-cid-x3pjskd3 data-astro-transition-persist="astro-ko5uysgj-1"> <span class="sr-only" data-astro-cid-x3pjskd3>Choose the visual pattern</span> <svg id="light" class="theme-toggle-icon size-5 transition-all" data-astro-cid-x3pjskd3 width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0"></path> <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7"></path> </svg> <svg id="dark" class="theme-toggle-icon absolute size-5 transition-all" data-astro-cid-x3pjskd3 width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path> </svg> </button> <div id="themes-menu" class="absolute hidden scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-900/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md" data-astro-cid-x3pjskd3 data-astro-transition-persist="astro-fyqz2s63-2"> <ul data-astro-cid-x3pjskd3> <li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm" data-astro-cid-x3pjskd3> Light </li><li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm" data-astro-cid-x3pjskd3> Dark </li> </ul> </div> </div>  <script>
-  let remove = null
-  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
-  const themesMenu = document.getElementById("themes-menu")
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Libre UX Challenge - Recomendaciones Mercado Play</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --canvas-default: #ffffff;
+            --canvas-subtle: #f6f8fa;
+            --canvas-overlay: #ffffff;
+            --border-default: #d0d7de;
+            --border-muted: #d8dee4;
+            --fg-default: #1f2328;
+            --fg-muted: #656d76;
+            --fg-subtle: #6e7781;
+            --accent: #0969da;
+            --accent-emphasis: #0969da;
+            --success: #1a7f37;
+            --success-bg: #dafbe1;
+            --success-border: #1a7f37;
+            --warning: #9a6700;
+            --warning-bg: #fff8c5;
+            --danger: #d1242f;
+            --danger-bg: #ffebe9;
+            --done: #8250df;
+            --done-bg: #f5f0ff;
+        }
 
-  const getThemePreference = () => {
-    if (typeof localStorage !== "undefined") {
-      return localStorage.getItem("theme") ?? "system"
-    }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: var(--canvas-default);
+            color: var(--fg-default);
+            font-size: 14px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    return window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light"
-  }
+        .display-text { font-size: 32px; font-weight: 500; line-height: 1.2; letter-spacing: -0.02em; }
+        .h1 { font-size: 28px; font-weight: 500; line-height: 1.1; }
+        .h2 { font-size: 20px; font-weight: 500; line-height: 1.3; }
+        .h3 { font-size: 16px; font-weight: 500; line-height: 1.4; }
+        .body-sm { font-size: 13px; line-height: 1.5; }
+        .caption { font-size: 12px; line-height: 1.4; }
+        .label { font-size: 11px; font-weight: 500; line-height: normal; }
+        .mono { font-family: 'JetBrains Mono', monospace; font-size: 13px; }
 
-  const updateIcon = (themePreference) => {
-    document.querySelectorAll(".theme-toggle-icon").forEach((element) => {
-      element.style.scale = element.id === themePreference ? "1" : "0"
-    })
-  }
+        .v-border { border: 0.5px solid var(--border-default); }
+        .v-border-muted { border: 0.5px solid var(--border-muted); }
+        .badge-done { background-color: var(--done-bg); border: 0.5px solid #6e40c9; color: var(--done); }
+        
+        .scroll-smooth { scroll-behavior: smooth; }
 
-  const updateTheme = () => {
-    if (remove != null) {
-      remove()
-    }
-    matchMedia.addEventListener("change", updateTheme)
-    remove = () => {
-      matchMedia.removeEventListener("change", updateTheme)
-    }
+        @media (min-width: 768px) {
+            .display-text { font-size: 42px; }
+        }
 
-    const themePreference = getThemePreference()
-    const isDark =
-      themePreference === "dark" ||
-      (themePreference === "system" && matchMedia.matches)
+        /* Accordion Logic */
+        .accordion-content { display: none; }
+        .accordion-item[data-open="true"] .accordion-content { display: block; }
+        .accordion-item[data-open="true"] .chevron { transform: rotate(180deg); }
 
-    updateIcon(themePreference)
-    document.documentElement.classList[isDark ? "add" : "remove"]("dark")
-  }
+        /* Tooltip Logic */
+        .tooltip { position: relative; display: inline-block; }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: var(--canvas-overlay);
+            color: var(--fg-muted);
+            text-align: center;
+            border: 1px solid var(--border-default);
+            padding: 10px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 50;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            font-size: 11px;
+            line-height: 1.4;
+            pointer-events: none;
+        }
+        .tooltip:hover .tooltiptext { visibility: visible; opacity: 1; }
+        
+        /* Matrix Dots */
+        .dot-yes { width: 10px; height: 10px; border-radius: 9999px; background-color: var(--success); }
+        .dot-no { width: 10px; height: 10px; border-radius: 9999px; background-color: var(--danger); }
+        .dot-maybe { width: 10px; height: 10px; border-radius: 9999px; background-color: var(--warning); }
+        .dot-disc { width: 10px; height: 10px; border-radius: 9999px; background-color: var(--danger); opacity: 0.4; box-shadow: inset 0 2px 4px 0 rgba(0,0,0,0.06); }
+    </style>
+</head>
+<body class="scroll-smooth">
 
-  updateTheme()
+    <!-- Navigation -->
+    <nav class="h-[48px] border-b-[0.5px] border-border-default bg-canvas-subtle px-6 sticky top-0 z-50 flex items-center justify-between">
+        <a href="#inicio" class="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <div class="w-[14px] h-[14px] bg-[#0969da] rounded-[3px]"></div>
+            <span class="font-medium text-sm text-fg-default">Mercado Libre UX Challenge</span>
+        </a>
+    </nav>
 
-  document.addEventListener("click", () => themesMenu.classList.remove("open"))
+    <main class="pb-24">
+        <!-- Hero Section -->
+        <section id="inicio" class="pt-12 pb-16 scroll-mt-24">
+            <div class="max-w-[960px] mx-auto px-6 grid grid-cols-1 md:grid-cols-10 gap-8 items-start">
+                <div class="md:col-span-6 space-y-3">
+                    <div class="space-y-3">
+                        <p class="label text-fg-muted tracking-wider uppercase">MELI UX Challenge</p>
+                        <h1 class="display-text text-fg-default tracking-tight">Recomendaciones de contenido en Mercado Play</h1>
+                        <p class="h3 text-fg-muted leading-relaxed max-w-lg">Un proceso de diseño acelerado por IA Fluency y libreria de diseño basada en Andes DS.</p>
+                    </div>
+                    <div class="flex gap-8 py-6 border-y-[0.5px] border-border-muted w-fit mt-4">
+                        <div>
+                            <p class="caption text-fg-muted">Métrica Crítica</p>
+                            <h2 class="h2 font-medium text-[#d1242f]">−4% Uso</h2>
+                        </div>
+                        <div class="px-8 border-x border-border-muted">
+                            <p class="caption text-fg-muted">Arquetipos</p>
+                            <h2 class="h2 font-medium text-fg-default">4 Perfiles</h2>
+                        </div>
+                        <div>
+                            <p class="caption text-fg-muted">Stack</p>
+                            <h2 class="h2 font-medium text-fg-default">Librerías UI basadas en Andes UI</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-4">
+                    <div class="v-border bg-canvas-overlay rounded-[10px] p-6 space-y-4 shadow-sm">
+                        <div>
+                            <p class="label uppercase text-fg-muted font-medium">Problem Statement</p>
+                            <div class="h-[0.5px] bg-border-muted my-3"></div>
+                            <p class="text-sm text-fg-default leading-relaxed italic">"Los usuarios no tienen forma de recibir ni compartir recomendaciones dentro de la plataforma, rompiendo el loop de descubrimiento y forzando el uso de herramientas externas."</p>
+                        </div>
+                        <div class="flex items-center gap-2 pt-2">
+                            <span class="bg-border-muted text-fg-default px-2 py-0.5 rounded-[2px] label">Key Result</span>
+                            <span class="body-sm text-fg-default">Incrementar retención semanal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  document.getElementById("theme-toggle-btn").addEventListener("click", (e) => {
-    e.stopPropagation()
-    const isClosed = !themesMenu.classList.contains("open")
-    themesMenu.classList[isClosed ? "add" : "remove"]("open")
-  })
+        <!-- Metodología -->
+        <section class="bg-canvas-subtle border-y-[0.5px] border-border-default py-8">
+            <div class="max-w-[960px] mx-auto px-6">
+                <div class="v-border bg-canvas-overlay p-6 rounded-[10px] space-y-4">
+                    <h3 class="body-sm font-medium uppercase text-fg-muted tracking-wider">Metodología: Design Thinking + GenAI</h3>
+                    <p class="h3 text-fg-muted leading-relaxed">
+                        El desafío se abordó utilizando el framework de <strong>Design Thinking</strong> en una modalidad acelerada de 5 etapas. 
+                        La principal innovación metodológica consistió en la integración de <strong>IA Generativa</strong> en cada fase para potenciar la síntesis de datos cualitativos, 
+                        acelerar la exploración conceptual y validar de forma iterativa mediante simulaciones de comportamiento humano.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-  document.querySelectorAll(".themes-menu-option").forEach((element) => {
-    element.addEventListener("click", (e) => {
-      localStorage.setItem("theme", e.target.innerText.toLowerCase().trim())
-      updateTheme()
-    })
-  })
+        <!-- Etapa 1: Empatizar -->
+        <section id="empatizar" class="py-16 scroll-mt-12">
+            <div class="max-w-[960px] mx-auto px-6">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-[#1a7f37] text-white flex items-center justify-center font-bold">1</div>
+                    <h1 class="h1 font-medium text-fg-default">Etapa: Empatizar</h1>
+                </div>
+                
+                <p class="h3 text-fg-muted mb-8 max-w-2xl">Investigación profunda para entender fricciones y necesidades reales de los usuarios mediante entrevistas y benchmark.</p>
+                
+                <div class="space-y-12">
+                    <!-- Testimoniales -->
+                    <div class="space-y-4">
+                        <h3 class="body-sm font-medium uppercase text-fg-muted tracking-wider">Testimonios de Usuarios</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Carla -->
+                            <article class="v-border bg-canvas-overlay rounded-md p-4 relative border-t-2 border-t-[#1a7f37]">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="w-7 h-7 rounded-full bg-[#dafbe1] text-[#1a7f37] flex items-center justify-center label">C</div>
+                                    <div>
+                                        <h4 class="body-sm font-medium text-fg-default">Carla · 21</h4>
+                                        <p class="caption text-fg-muted">La coleccionista social</p>
+                                    </div>
+                                </div>
+                                <p class="text-sm italic text-fg-default leading-relaxed mt-3">"Tengo una conversación de WhatsApp conmigo misma para anotar las películas que me recomiendan."</p>
+                                <div class="mt-4">
+                                    <span class="caption inline-block px-2 py-0.5 bg-[#ffebe9] border-[0.5px] border-[#d1242f] text-[#d1242f] rounded-xs font-medium">Contexto social se pierde</span>
+                                </div>
+                            </article>
+                            <!-- Virginia -->
+                            <article class="v-border bg-canvas-overlay rounded-md p-4 relative border-t-2 border-t-[#9a6700]">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="w-7 h-7 rounded-full bg-[#fff8c5] text-[#9a6700] flex items-center justify-center label">V</div>
+                                    <div>
+                                        <h4 class="body-sm font-medium text-fg-default">Virginia · 40</h4>
+                                        <p class="caption text-fg-muted">La curadora selectiva</p>
+                                    </div>
+                                </div>
+                                <p class="text-sm italic text-fg-default leading-relaxed mt-3">"Nunca me guío por las recomendaciones de gente que no conozco."</p>
+                                <div class="mt-4">
+                                    <span class="caption inline-block px-2 py-0.5 bg-[#ffebe9] border-[0.5px] border-[#d1242f] text-[#d1242f] rounded-xs font-medium">Falta de señal de confianza</span>
+                                </div>
+                            </article>
+                            <!-- Roberto -->
+                            <article class="v-border bg-canvas-overlay rounded-md p-4 relative border-t-2 border-t-[#8250df]">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="w-7 h-7 rounded-full bg-[#f5f0ff] text-[#8250df] flex items-center justify-center label">R</div>
+                                    <div>
+                                        <h4 class="body-sm font-medium text-fg-default">Roberto · 60</h4>
+                                        <p class="caption text-fg-muted">El espectador familiar</p>
+                                    </div>
+                                </div>
+                                <p class="text-sm italic text-fg-default leading-relaxed mt-3">"Cuando abro Mercado Play, me gustaría tener un lugar con los contenidos destacados por mi familia."</p>
+                                <div class="mt-4">
+                                    <span class="caption inline-block px-2 py-0.5 bg-[#ffebe9] border-[0.5px] border-[#d1242f] text-[#d1242f] rounded-xs font-medium">Dependencia de intermediario humano</span>
+                                </div>
+                            </article>
+                            <!-- Andrés -->
+                            <article class="v-border bg-canvas-overlay rounded-md p-4 relative border-t-2 border-t-[#0969da]">
+                                <div class="flex items-center gap-3 mb-3">
+                                    <div class="w-7 h-7 rounded-full bg-[#ddf4ff] text-[#0969da] flex items-center justify-center label">A</div>
+                                    <div>
+                                        <h4 class="body-sm font-medium text-fg-default">Andrés · 30</h4>
+                                        <p class="caption text-fg-muted">El intermediario tecnológico</p>
+                                    </div>
+                                </div>
+                                <p class="text-sm italic text-fg-default leading-relaxed mt-3">"Mi papá siempre se olvida el nombre de las series que me quiere recomendar, termino buscando en Google."</p>
+                                <div class="mt-4">
+                                    <span class="caption inline-block px-2 py-0.5 bg-[#ffebe9] border-[0.5px] border-[#d1242f] text-[#d1242f] rounded-xs font-medium">Esfuerzo recae íntegro en el emisor</span>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
 
-  document.addEventListener('astro:after-swap', () => {
-    updateTheme();
-    window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
-  })
-</script> </nav> </header>    <main class="px-4"> <section class="section py-16 md:py-36 scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">  <div class=""> <div class="flex gap-4 mb-4"> <a href="https://www.linkedin.com/in/sanmartineme/" target="_blank" rel="noopener" class="flex items-center transition md:justify-center md:hover:scale-105"> <div class="flex items-center "> <span class="relative inline-flex overflow-hidden rounded-full p-[1px]"> <span class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"></span> <div class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap"> Open to work! </div> </span> </div> </a> </div> <h1 class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white">
-Carlos San Martín
-</h1> <p class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300">
-I am Carlos, a Product Designer & UX Designer based in Santiago de Chile. I specialize in the design process for digital products and experiences.
-</p> <nav class="flex flex-wrap gap-4 mt-8"> <a href="https://www.linkedin.com/in/sanmartineme/" target="_blank" rel="noopener noreferrer" role="link" class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-linkedin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path><path d="M8 11l0 5"></path><path d="M8 8l0 .01"></path><path d="M12 16l0 -5"></path><path d="M16 16v-3a2 2 0 0 0 -4 0"></path></svg>
-LinkedIn
- </a> <a href="mailto:sanmartineme@gmail.com" target="_blank" rel="noopener noreferrer" role="link" class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-forward" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 18h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5"></path><path d="M3 6l9 6l9 -6"></path><path d="M15 18h6"></path><path d="M18 15l3 3l-3 3"></path></svg>
-Contact
- </a> <a href="https://csanmartin.com/carlossanmartin-resume-2024.pdf" target="_blank" rel="noopener noreferrer" role="link" class="inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-yellow-500/80 text-md hover:bg-gray-900 hover:border-gray-700 hover:text-white dark:hover:bg-gray-100 dark:hover:border-gray-300 dark:hover:text-black group max-w-fit focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black">  <svg class="size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
-CV
- </a> </nav> </div>  </section> <div class="space-y-24"> <section id="experience" data-section="experience" class="section undefined scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">  <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white undefined">  <svg class="size-8" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path><path d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"></path></svg>
-Experience
- </h2> <ol class="relative mt-16"> <li class=""> <div class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"> <div class="relative pb-12 md:col-span-2"> <div class="sticky top-0"> <span class="text-green-500 -left-[42px] absolute rounded-full text-5xl">&bull;</span> <h3 class="text-xl font-bold text-green-500">Senior UX Designer</h3> <h4 class="font-semibold text-xl text-gray-600 dark:text-white">Principal Chile</h4> <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">Nov 2020 - Aug 2024</time> </div> </div> <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"> I led the design stages in the end to end experience for the creation of the Principal Digital Investment Advisory tool to investment advisors, a Widget that was integrated into the Salesforce CRM tool, which generated autonomy in the management of changes and the creation of incremental and scalability with respect to each of the versions of the product.   </div> </div> </li><li class=""> <div class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"> <div class="relative pb-12 md:col-span-2"> <div class="sticky top-0"> <span class="text-green-500 -left-[42px] absolute rounded-full text-5xl">&bull;</span> <h3 class="text-xl font-bold text-green-500">Chapter Lead</h3> <h4 class="font-semibold text-xl text-gray-600 dark:text-white">Design System Community SCL</h4> <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">May 2022 - Current</time> </div> </div> <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"> Lead management strategy for the creation and maintenance of the first design systems community of practice at the national level for the Santiago de Chile chapter. This community informs about best practices around design systems and shows local references.  </div> </div> </li><li class=""> <div class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"> <div class="relative pb-12 md:col-span-2"> <div class="sticky top-0"> <span class="text-green-500 -left-[42px] absolute rounded-full text-5xl">&bull;</span> <h3 class="text-xl font-bold text-green-500">Sr. Product Designer</h3> <h4 class="font-semibold text-xl text-gray-600 dark:text-white">Scotiabank Chile</h4> <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">Nov 2018 - Nov 2020</time> </div> </div> <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"> I designed the creation of end to end experience flows for the new private website for digital banking clients, a channel that had to support the massive migration of about 300k users to this new platform. Together with the research areas, we generate a workflow for the creation of new and better versions of the product based on the needs of the users who adopted this new experience.  </div> </div> </li><li class=""> <div class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"> <div class="relative pb-12 md:col-span-2"> <div class="sticky top-0"> <span class="text-green-500 -left-[42px] absolute rounded-full text-5xl">&bull;</span> <h3 class="text-xl font-bold text-green-500">UX/UI Designer</h3> <h4 class="font-semibold text-xl text-gray-600 dark:text-white">2 Brains</h4> <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">Apr 2018 - Nov 2018</time> </div> </div> <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"> I participated in the creation of digital experience flows for internal products of the BCI Pyme banking company, where I designed digital products based on the needs of the customer segment. Collaborated directly with research teams to generate product versions in the improvement cycle.  </div> </div> </li><li class=""> <div class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"> <div class="relative pb-12 md:col-span-2"> <div class="sticky top-0"> <span class="text-green-500 -left-[42px] absolute rounded-full text-5xl">&bull;</span> <h3 class="text-xl font-bold text-green-500">Web &amp; UX/UI Designer</h3> <h4 class="font-semibold text-xl text-gray-600 dark:text-white">INACAP</h4> <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">Jun 2015 - Feb 2018</time> </div> </div> <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"> I developed maintenance tasks for Inacap institutional web portals where the construction of digital products for marketing and communications was required. For systems and information management, I designed and developed Inacap&#39;s first Mobile App under optimal development standards and good information practices using languages ​​such as Ionic and Angular.  </div> </div> </li><li class=""> <div class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"> <div class="relative pb-12 md:col-span-2"> <div class="sticky top-0"> <span class="text-green-500 -left-[42px] absolute rounded-full text-5xl">&bull;</span> <h3 class="text-xl font-bold text-green-500">Product Designer</h3> <h4 class="font-semibold text-xl text-gray-600 dark:text-white">Start-up Chile Corfo</h4> <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">Aug 2014 - Jun 2015 </time> </div> </div> <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"> I designed visual and digital products based on the needs of the Corfo application portals and the stages of the Startup Chile contest where 1000+ entrepreneurs applied annually. My tasks were also to provide maintenance to web portals and digital access for the community.  </div> </div> </li><li class=""> <div class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"> <div class="relative pb-12 md:col-span-2"> <div class="sticky top-0"> <span class="text-green-500 -left-[42px] absolute rounded-full text-5xl">&bull;</span> <h3 class="text-xl font-bold text-green-500">Web Designer</h3> <h4 class="font-semibold text-xl text-gray-600 dark:text-white">Grupo Taisa</h4> <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">Feb 2013 - Aug 2014 </time> </div> </div> <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3"> I did web development work for the creation of a web portal and news blog for internal clients using HTML, CSS and Javascript.  </div> </div> </li> </ol>  </section> <section id="projects" data-section="projects" class="section undefined scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">  <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white undefined">  <svg class="size-7" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path d="M14 4l-4 16"></path></svg>
-Latest projects
- </h2> <div class="flex flex-col gap-y-16"> <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0"> <div class="w-full md:w-1/2"> <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"> <img alt="Carlos san martín - Product Designer & UX Designer" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src="/projects/pds.jpg"> </div> </div> <div class="w-full md:w-1/2 md:max-w-lg"> <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100"> Reference model design for world class Design System PDS </h3> <div class="flex flex-wrap mt-2"> <ul class="flex flex-row mb-2 gap-x-2"> <li> <span class="flex gap-x-2 rounded-md text-xs bg-[#003159] text-white py-1 px-2 "> Figma </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-[#003159] text-white py-1 px-2 "> Storybook </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-[#003159] text-white py-1 px-2 "> Excel </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-[#003159] text-white py-1 px-2 "> Tableau </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-black text-white py-1 px-2 "> Design Systems </span> </li> </ul> <div class="mt-2 text-gray-700 dark:text-gray-400">New contribution and change management model for the design and development libraries, which soon became a reference for the construction of a world-class Design System PDS, being at the service of all the company&#39;s professionals to build digital products and experiences.</div> <footer class="flex items-end justify-start mt-4 gap-x-4"></footer> </div> </div> </article><article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0"> <div class="w-full md:w-1/2"> <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"> <img alt="Carlos san martín - Product Designer & UX Designer" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src="/projects/asesoria.jpg"> </div> </div> <div class="w-full md:w-1/2 md:max-w-lg"> <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100"> Principal Digital Advice Tool </h3> <div class="flex flex-wrap mt-2"> <ul class="flex flex-row mb-2 gap-x-2"> <li> <span class="flex gap-x-2 rounded-md text-xs bg-[#003159] text-white py-1 px-2 "> Figma </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-[#003159] text-white py-1 px-2 "> Salesforce </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-black text-white py-1 px-2 "> Prototyping </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-black text-white py-1 px-2 "> Research </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-black text-white py-1 px-2 "> Data Viz </span> </li> </ul> <div class="mt-2 text-gray-700 dark:text-gray-400">Digital investment advisory tool for the exclusive use of investment advisors focused on high net worth business segments. This tool contains a linear flow that generates a commercial operation, which is analyzed in detail showing elements such as profitability and detail of the proposal.</div> <footer class="flex items-end justify-start mt-4 gap-x-4"></footer> </div> </div> </article><article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0"> <div class="w-full md:w-1/2"> <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"> <img alt="Carlos san martín - Product Designer & UX Designer" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src="/projects/adm-asesoria.jpg"> </div> </div> <div class="w-full md:w-1/2 md:max-w-lg"> <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100"> Tool for the management and administration of Principal Digital Advice </h3> <div class="flex flex-wrap mt-2"> <ul class="flex flex-row mb-2 gap-x-2"> <li> <span class="flex gap-x-2 rounded-md text-xs bg-[#003159] text-white py-1 px-2 "> Figma </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-[#003159] text-white py-1 px-2 "> Salesforce </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-black text-white py-1 px-2 "> Prototyping </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-black text-white py-1 px-2 "> Research </span> </li> </ul> <div class="mt-2 text-gray-700 dark:text-gray-400">Monitoring and management tool for digital advisory operations whose operation works based on an ID code integrated into the reporting service sent to each advised client.</div> <footer class="flex items-end justify-start mt-4 gap-x-4"></footer> </div> </div> </article><article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0"> <div class="w-full md:w-1/2"> <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"> <img alt="Carlos san martín - Product Designer & UX Designer" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src="/projects/documento.jpg"> </div> </div> <div class="w-full md:w-1/2 md:max-w-lg"> <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100"> Document and Reporting for Principal Digital Advice </h3> <div class="flex flex-wrap mt-2"> <ul class="flex flex-row mb-2 gap-x-2"> <li> <span class="flex gap-x-2 rounded-md text-xs bg-[#003159] text-white py-1 px-2 "> Figma </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-[#003159] text-white py-1 px-2 "> Photoshop </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-black text-white py-1 px-2 "> Prototyping </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-black text-white py-1 px-2 "> Research </span> </li><li> <span class="flex gap-x-2 rounded-md text-xs bg-black text-white py-1 px-2 "> Data Viz </span> </li> </ul> <div class="mt-2 text-gray-700 dark:text-gray-400">Printable digital product that serves as reporting and sales argument to present the digital consulting operation directly to clients. This document contains on its cover an ID code for consultation, monitoring and management of the process.</div> <footer class="flex items-end justify-start mt-4 gap-x-4"></footer> </div> </div> </article> </div>  </section> <section id="about-me" data-section="about-me" class="section undefined scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">  <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white undefined">  <svg class="size-8" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path><path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path><path d="M15 19l2 2l4 -4"></path></svg>
-About me
- </h2> <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row"> <div class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"> <p>
-I am a Product Designer and UX Designer with more than 8 years of experience in the financial industry, where I have integrated high-performance multidisciplinary teams. My design approach is user-centered, applying design thinking methodologies to understand their needs and behaviors. <br><br> From initial research to implementation, I follow an iterative process that includes prototyping, testing, and adjustments based on real feedback. <br><br>I have a solid ability to negotiate and reach agreements with business, product and engineering areas, which allows me to align objectives and maximize results. <br><br>With a data-driven approach, I use metrics and analysis to inform my design decisions, always with the goal of creating experiences that positively impact the business.
-</p> </div> </article>  </section> </div> </main>  <footer class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"> <div class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"> <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90">© 2024 <a href="#" class="hover:underline">Carlos San Martín</a>. All right reserved.
-</span> </div> </footer>  </body> </html>
+                    <!-- Benchmark -->
+                    <div class="v-border bg-canvas-overlay rounded-[10px] p-6 space-y-6">
+                        <h3 class="body-sm font-medium uppercase text-fg-muted tracking-wider">Benchmark Competitivo Detallado</h3>
+                        <div class="space-y-4">
+                            <!-- Netflix -->
+                            <div class="accordion-item v-border rounded-[12px] bg-canvas-default overflow-hidden" id="platform-netflix">
+                                <button onclick="togglePlatform('netflix')" class="w-full flex items-center gap-4 p-4 hover:bg-canvas-subtle transition-colors text-left">
+                                    <div class="w-9 h-9 rounded-[8px] bg-neutral-900 flex items-center justify-center text-lg shrink-0">🎬</div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="body-sm font-medium text-fg-default">Netflix</h3>
+                                        <p class="caption text-fg-muted">Recomendación algorítmica · sin social nativo activo</p>
+                                    </div>
+                                    <i data-lucide="chevron-down" class="chevron transition-transform text-fg-muted"></i>
+                                </button>
+                                <div class="accordion-content p-5 border-t border-border-muted/30 bg-canvas-overlay/30 space-y-6">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div class="space-y-4">
+                                            <h5 class="label font-bold uppercase tracking-wider text-fg-subtle">Funcionalidades relevadas</h5>
+                                            <div class="space-y-2 caption text-fg-muted">
+                                                <div class="flex gap-2 border-b border-border-muted/20 pb-2">✅ Recomendaciones algorítmicas (80%)</div>
+                                                <div class="flex gap-2 border-b border-border-muted/20 pb-2">❌ Red social de amigos nativa</div>
+                                                <div class="flex gap-2">✅ Compartir momentos (2024)</div>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-4">
+                                            <h5 class="label font-bold uppercase tracking-wider text-fg-subtle">Aprendizajes para Meli Play</h5>
+                                            <ul class="space-y-3 caption text-fg-muted">
+                                                <li class="flex gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5 shrink-0"></div> Privacidad > Visibilidad: los usuarios no quieren mostrar TODO.</li>
+                                                <li class="flex gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-900 mt-1.5 shrink-0"></div> El momento compartido vale más que el historial completo.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="bg-canvas-subtle p-3 border-l-2 border-border-default caption italic text-fg-muted">"Eliminaron las funciones sociales porque la privacidad y el algoritmo pesaban más que el gusto de los amigos."</div>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4 border-t border-border-muted/30">
+                                        <div class="bg-success/5 p-3 rounded-md border border-success/20 label text-success uppercase">Adoptar: Compartir momentos específicos</div>
+                                        <div class="bg-danger/5 p-3 rounded-md border border-danger/20 label text-danger uppercase">Evitar: Visibilidad forzada del historial</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Steam -->
+                            <div class="accordion-item v-border rounded-[12px] bg-canvas-default overflow-hidden" id="platform-steam" data-open="true">
+                                <button onclick="togglePlatform('steam')" class="w-full flex items-center gap-4 p-4 hover:bg-canvas-subtle transition-colors text-left">
+                                    <div class="w-9 h-9 rounded-[8px] bg-[#1B2838] flex items-center justify-center text-lg shrink-0">🎮</div>
+                                    <div class="flex-1 min-w-0">
+                                        <h3 class="body-sm font-medium text-fg-default">Steam (Benchmark de Referencia)</h3>
+                                        <p class="caption text-fg-muted">Activity feed & Wunschliste social</p>
+                                    </div>
+                                    <i data-lucide="chevron-down" class="chevron transition-transform text-fg-muted"></i>
+                                </button>
+                                <div class="accordion-content p-5 border-t border-border-muted/30 bg-canvas-overlay/30 space-y-6" style="display-block;">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div class="space-y-4">
+                                            <h5 class="label font-bold uppercase tracking-wider text-fg-subtle">Funcionalidades relevadas</h5>
+                                            <div class="space-y-2 caption text-fg-muted">
+                                                <div class="flex gap-2 border-b border-border-muted/20 pb-2">✅ Activity Feed de amigos</div>
+                                                <div class="flex gap-2 border-b border-border-muted/20 pb-2">✅ Wishlist pública y compartible</div>
+                                                <div class="flex gap-2">✅ Recomendaciones por pares verificados</div>
+                                            </div>
+                                        </div>
+                                        <div class="space-y-4">
+                                            <h5 class="label font-bold uppercase tracking-wider text-fg-subtle">Aprendizajes para Meli Play</h5>
+                                            <ul class="space-y-3 caption text-fg-muted">
+                                                <li class="flex gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#1B2838] mt-1.5 shrink-0"></div> El feed asíncrono es la feature social más valorada.</li>
+                                                <li class="flex gap-2"><div class="w-1.5 h-1.5 rounded-full bg-[#1B2838] mt-1.5 shrink-0"></div> Privacidad granular: control por contenido individual.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="bg-canvas-subtle p-3 border-l-2 border-border-default caption italic text-fg-muted">"No hay feature que me dé más envidia. Descubrí muchísimos juegos mirando el feed de mis amigos."</div>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-4 border-t border-border-muted/30">
+                                        <div class="bg-success/5 p-3 rounded-md border border-success/20 label text-success uppercase">Adoptar: Feed asíncrono + Privacidad granular</div>
+                                        <div class="bg-danger/5 p-3 rounded-md border border-danger/20 label text-danger uppercase">Evitar: Exponer historial completo sin permiso</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Matrix de Funcionalidades -->
+                        <div class="mt-8 space-y-4">
+                            <h4 class="font-medium text-fg-default">Matriz comparativa de funcionalidades</h4>
+                            <div class="v-border rounded-[12px] overflow-hidden bg-canvas-default text-xs">
+                                <table class="w-full text-left">
+                                    <thead class="bg-canvas-subtle border-b border-border-muted">
+                                        <tr>
+                                            <th class="p-3 label uppercase text-fg-subtle">Plataforma</th>
+                                            <th class="p-3 label uppercase text-fg-subtle">Lista compartible</th>
+                                            <th class="p-3 label uppercase text-fg-subtle">Recomendación P2P</th>
+                                            <th class="p-3 label uppercase text-fg-subtle">Activity Feed</th>
+                                            <th class="p-3 label uppercase text-fg-subtle">Co-watching</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-border-muted/20">
+                                        <tr>
+                                            <td class="p-3 font-bold">Netflix</td>
+                                            <td class="p-3"><div class="dot-no"></div></td>
+                                            <td class="p-3"><div class="dot-no"></div></td>
+                                            <td class="p-3"><div class="dot-disc"></div></td>
+                                            <td class="p-3"><div class="dot-no"></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3 font-bold">Crunchyroll</td>
+                                            <td class="p-3"><div class="dot-yes"></div></td>
+                                            <td class="p-3"><div class="dot-maybe"></div></td>
+                                            <td class="p-3"><div class="dot-maybe"></div></td>
+                                            <td class="p-3"><div class="dot-yes"></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3 font-bold">Steam</td>
+                                            <td class="p-3"><div class="dot-yes"></div></td>
+                                            <td class="p-3"><div class="dot-yes"></div></td>
+                                            <td class="p-3"><div class="dot-yes"></div></td>
+                                            <td class="p-3"><div class="dot-no"></div></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="flex flex-wrap gap-4 pt-2">
+                                <div class="flex items-center gap-2"><span class="dot-yes"></span> <span class="label text-fg-muted uppercase">Disponible</span></div>
+                                <div class="flex items-center gap-2"><span class="dot-maybe"></span> <span class="label text-fg-muted uppercase">Limitado</span></div>
+                                <div class="flex items-center gap-2"><span class="dot-no"></span> <span class="label text-fg-muted uppercase">No disponible</span></div>
+                                <div class="flex items-center gap-2"><span class="dot-disc"></span> <span class="label text-fg-muted uppercase">Discontinuado</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Oportunidades -->
+                        <div class="mt-12 space-y-4">
+                            <h3 class="font-medium text-fg-default pb-2 border-b border-border-muted">Patrones, brechas y oportunidades para Meli Play</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-canvas-overlay/40 rounded-[10px] p-4 v-border space-y-2">
+                                    <span class="label font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-accent/20 bg-accent/10 text-accent">Patrón común</span>
+                                    <h5 class="body-sm font-bold text-fg-default leading-snug">El co-watching síncrono no sobrevive post-pandemia</h5>
+                                    <p class="label text-fg-muted leading-relaxed">Amazon y Disney eliminaron sus features. El mercado migró al modelo asíncrono.</p>
+                                </div>
+                                <div class="bg-canvas-overlay/40 rounded-[10px] p-4 v-border space-y-2">
+                                    <span class="label font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border border-success/20 bg-success/10 text-success">Oportunidad</span>
+                                    <h5 class="body-sm font-bold text-fg-default leading-snug">Meli Play: primera social-first cross-platform</h5>
+                                    <p class="label text-fg-muted leading-relaxed">Estar en TV, mobile y web sin lock-in es una ventaja estructural.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Etapa 2: Definir -->
+        <section id="definir" class="py-16 bg-canvas-subtle border-y border-border-muted scroll-mt-12">
+            <div class="max-w-[960px] mx-auto px-6">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-[#1a7f37] text-white flex items-center justify-center font-bold">2</div>
+                    <h1 class="h1 font-medium text-fg-default">Etapa: Definir</h1>
+                </div>
+                <p class="h3 text-fg-muted mb-12 max-w-2xl">Síntesis de hallazgos para establecer arquetipos, JTBD y métricas de éxito que guiarán la solución.</p>
+
+                <div class="space-y-16">
+                    <!-- JTBD Mapping -->
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between">
+                            <h3 class="body-sm font-medium uppercase text-fg-muted tracking-wider">01. JTBD Mapping · 4 Perfiles</h3>
+                            <span class="badge-done px-2 py-0.5 rounded-full label font-bold">ESTRATÉGICO</span>
+                        </div>
+                        <div class="v-border rounded-[10px] overflow-hidden bg-canvas-default text-xs shadow-sm">
+                            <table class="w-full text-left">
+                                <thead class="bg-canvas-subtle border-b border-border-muted">
+                                    <tr>
+                                        <th class="p-3 label uppercase text-fg-subtle">Perfil</th>
+                                        <th class="p-3 label uppercase text-fg-subtle">Situación</th>
+                                        <th class="p-3 label uppercase text-fg-subtle">Motivación</th>
+                                        <th class="p-3 label uppercase text-fg-subtle">Resultado</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-border-muted/20">
+                                    <tr>
+                                        <td class="p-3 font-medium text-accent">Social</td>
+                                        <td class="p-3 text-fg-muted leading-relaxed">Veo algo increíble</td>
+                                        <td class="p-3 text-fg-default leading-relaxed">Compartirlo al instante</td>
+                                        <td class="p-3 text-fg-muted leading-relaxed">Cerrar el loop de recomendación</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3 font-medium text-accent">Familiar</td>
+                                        <td class="p-3 text-fg-muted">Estamos en el sillón</td>
+                                        <td class="p-3 text-fg-default leading-relaxed">Ver lo que otros marcaron</td>
+                                        <td class="p-3 text-fg-muted leading-relaxed">Evitar la parálisis de elección</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Arquetipos Detallados -->
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between">
+                            <h3 class="body-sm font-medium uppercase text-fg-muted tracking-wider">02. Arquetipos Detallados</h3>
+                            <span class="badge-done px-2 py-0.5 rounded-full label font-bold">UX RESEARCH</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="v-border bg-canvas-overlay p-4 rounded-[8px] border-l-4 border-l-accent shadow-sm">
+                                <h4 class="text-sm font-bold text-fg-default mb-2">La Exploradora Social</h4>
+                                <div class="space-y-1 mb-3">
+                                    <p class="label text-fg-muted"><span class="font-bold text-fg-subtle">Necesidad:</span> Validación por pares</p>
+                                    <p class="label text-fg-muted"><span class="font-bold text-fg-subtle">Barrera:</span> Ruido algorítmico</p>
+                                </div>
+                                <div class="pt-3 border-t border-border-muted/30">
+                                    <p class="label font-bold uppercase tracking-wider text-accent mb-1">Análisis Profundo</p>
+                                    <p class="caption text-fg-default leading-relaxed">Busca ser la primera en descubrir tendencias y validarlas con su círculo cercano.</p>
+                                </div>
+                            </div>
+                            <div class="v-border bg-canvas-overlay p-4 rounded-[8px] border-l-4 border-l-accent shadow-sm">
+                                <h4 class="text-sm font-bold text-fg-default mb-2">El Espectador Familiar</h4>
+                                <div class="space-y-1 mb-3">
+                                    <p class="label text-fg-muted"><span class="font-bold text-fg-subtle">Necesidad:</span> Espacios compartidos</p>
+                                    <p class="label text-fg-muted"><span class="font-bold text-fg-subtle">Barrera:</span> Privacidad vs Social</p>
+                                </div>
+                                <div class="pt-3 border-t border-border-muted/30">
+                                    <p class="label font-bold uppercase tracking-wider text-accent mb-1">Análisis Profundo</p>
+                                    <p class="caption text-fg-default leading-relaxed">Desea que el contenido llegue a él sin esfuerzo de búsqueda manual.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Métricas -->
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between">
+                            <h3 class="body-sm font-medium uppercase text-fg-muted tracking-wider">03. Métricas de Éxito</h3>
+                            <span class="badge-done px-2 py-0.5 rounded-full label font-bold">DATA-DRIVEN</span>
+                        </div>
+                        <div class="grid grid-cols-1 lg:grid-cols-10 gap-8">
+                            <div class="lg:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="v-border bg-canvas-default p-4 rounded-[10px] space-y-3">
+                                    <h4 class="caption font-bold text-success uppercase">Señales Rápidas</h4>
+                                    <ul class="space-y-2 caption">
+                                        <li class="flex justify-between"><span>CTR Recomendaciones</span> <span class="mono">+15% Objetivo</span></li>
+                                        <li class="flex justify-between"><span>Compartidos por semana</span> <span class="mono">2.5 promedio</span></li>
+                                    </ul>
+                                </div>
+                                <div class="v-border bg-canvas-default p-4 rounded-[10px] space-y-3">
+                                    <h4 class="caption font-bold text-warning uppercase">Resultado Final</h4>
+                                    <ul class="space-y-2 caption">
+                                        <li class="flex justify-between"><span>Usuarios (7 días)</span> <span class="mono">+4% Real</span></li>
+                                        <li class="flex justify-between"><span>Lealtad (LTV)</span> <span class="mono">+1.2x</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-4">
+                                <div class="v-border bg-canvas-overlay p-4 rounded-[10px] space-y-4">
+                                    <h4 class="label font-bold text-fg-subtle uppercase">Definición de Cifras</h4>
+                                    <p class="caption text-fg-muted leading-relaxed">El target se basa en que las recomendaciones P2P tienen una conversión 3x superior al algoritmo.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Etapa 3: Idear -->
+        <section id="idear" class="py-16 scroll-mt-12">
+            <div class="max-w-[960px] mx-auto px-6">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-[#1a7f37] text-white flex items-center justify-center font-bold">3</div>
+                    <h1 class="h1 font-medium text-fg-default">Etapa: Idear</h1>
+                </div>
+                <p class="h3 text-fg-muted mb-8 max-w-2xl">Exploración creativa de soluciones ante el problema de recomendación entre amigos y familia.</p>
+
+                <div class="space-y-12">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="v-border bg-canvas-overlay rounded-[10px] p-6 space-y-3">
+                            <div class="p-2 bg-canvas-subtle rounded-sm w-fit"><i data-lucide="users" class="text-accent"></i></div>
+                            <h3 class="font-medium text-fg-default">Delegación Directa</h3>
+                            <p class="text-sm text-fg-muted">Remisión de contenido sin intermediarios externos.</p>
+                        </div>
+                        <div class="v-border bg-canvas-overlay rounded-[10px] p-6 space-y-3">
+                            <div class="p-2 bg-canvas-subtle rounded-sm w-fit"><i data-lucide="activity" class="text-success"></i></div>
+                            <h3 class="font-medium text-fg-default">Confirmación Silenciosa</h3>
+                            <p class="text-sm text-fg-muted">Saber cuando tu recomendación fue vista por el receptor.</p>
+                        </div>
+                        <div class="v-border bg-canvas-overlay rounded-[10px] p-6 space-y-3">
+                            <div class="p-2 bg-canvas-subtle rounded-sm w-fit"><i data-lucide="target" class="text-warning"></i></div>
+                            <h3 class="font-medium text-fg-default">Relevancia Familiar</h3>
+                            <p class="text-sm text-fg-muted">Prioridad basada en el vínculo real, no en el sistema global.</p>
+                        </div>
+                    </div>
+
+                    <div class="v-border bg-canvas-overlay rounded-[10px] p-6 space-y-4">
+                        <h3 class="body-sm font-medium uppercase text-fg-muted tracking-wider">Concepto Seleccionado: "Para vos"</h3>
+                        <p class="h3 text-fg-muted leading-relaxed italic">"Más que una lista de favoritos, 'Para vos' es un canal de comunicación asincrónico. El emisor deposita el contenido directamente en el home del receptor."</p>
+                        <div class="pt-4 border-t border-border-muted/30">
+                            <h4 class="body-sm font-bold text-fg-default uppercase tracking-wide mb-2">¿Por qué este concepto?</h4>
+                            <p class="text-sm text-fg-muted leading-relaxed">Aprovecha la señal de <strong>alta confianza</strong> de los vínculos cercanos. Ataca la relevancia emocional del contenido integrándose nativamente en la experiencia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Etapa 4: Prototipar -->
+        <section id="prototipar" class="py-16 bg-canvas-subtle border-y border-border-muted scroll-mt-12">
+            <div class="max-w-[960px] mx-auto px-6">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-[#0969da] text-white flex items-center justify-center font-bold">4</div>
+                    <h1 class="h1 font-medium text-fg-default">Etapa: Prototipar</h1>
+                </div>
+                <p class="h3 text-fg-muted mb-8 max-w-2xl">Construcción de la solución de alta fidelidad cumpliendo estrictamente con los estándares de Andes UI.</p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-10 gap-12">
+                    <div class="lg:col-span-6 space-y-8">
+                        <!-- Features Analizadas -->
+                        <div class="v-border bg-canvas-overlay rounded-[10px] p-6 space-y-4 shadow-sm">
+                            <h3 class="body-sm font-bold uppercase text-fg-subtle tracking-wider">Features Analizadas</h3>
+                            <div class="space-y-3">
+                                <div class="p-4 rounded-md bg-success/5 border border-success/30">
+                                    <div class="flex justify-between mb-1">
+                                        <h4 class="font-bold text-success">Recomendación Directa</h4>
+                                        <span class="bg-success text-white label font-bold uppercase px-2 py-0.5 rounded-full">Seleccionada</span>
+                                    </div>
+                                    <p class="body-sm text-fg-muted">Canal asincrónico directo al home del receptor.</p>
+                                </div>
+                                <div class="p-4 rounded-md bg-canvas-subtle/50 opacity-60 border border-border-muted">
+                                    <h4 class="font-bold text-fg-default">Delegación Automática (IA)</h4>
+                                    <p class="body-sm text-fg-muted">Sugerencias basadas en algoritmos de ML.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Matrix de Selección -->
+                        <div class="v-border rounded-[10px] overflow-hidden bg-canvas-default shadow-sm">
+                            <table class="w-full text-left body-sm">
+                                <thead class="bg-canvas-subtle border-b border-border-muted">
+                                    <tr class="h-10">
+                                        <th class="px-4 label uppercase text-fg-subtle">Concepto</th>
+                                        <th class="px-4 label uppercase text-fg-subtle text-center">Score</th>
+                                        <th class="px-4 label uppercase text-fg-subtle">Decisión</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-border-muted/30">
+                                    <tr class="bg-accent/[0.02]">
+                                        <td class="p-4 font-bold text-accent">Recomendación Directa</td>
+                                        <td class="p-4 text-center font-bold text-accent">8.85</td>
+                                        <td class="p-4"><span class="bg-success/10 text-success px-2 py-0.5 rounded-full label font-bold uppercase">Seleccionada</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-4 font-bold">Búsqueda Proactiva</td>
+                                        <td class="p-4 text-center font-bold text-fg-muted">6.60</td>
+                                        <td class="p-4"><span class="bg-neutral-100 text-fg-muted px-2 py-0.5 rounded-full label font-bold uppercase">En espera</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-4">
+                        <!-- Scoring Formula -->
+                        <div class="bg-accent/5 v-border border-accent/20 rounded-[10px] p-6 space-y-4">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="calculator" class="text-accent w-4 h-4"></i>
+                                <h4 class="font-bold text-fg-default text-xs uppercase">Fórmula de Scoring</h4>
+                            </div>
+                            <div class="bg-canvas-default/50 p-3 rounded-md border border-accent/10 body-sm mono text-accent text-center">
+                                (I × 0.4) + (V × 0.3) + (C × 0.3)
+                            </div>
+                            <ul class="space-y-2 caption text-fg-muted">
+                                <li><strong>I:</strong> Impacto en Relevancia y Conversión.</li>
+                                <li><strong>V:</strong> Viabilidad técnica y coste.</li>
+                                <li><strong>C:</strong> Consistencia con el sistema Andes UI.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prototype Views -->
+                <div class="mt-16 space-y-8">
+                    <h2 class="h2 font-medium text-fg-default">Visualización del Prototipo</h2>
+                    <div class="w-full aspect-video rounded-[12px] overflow-hidden bg-slate-900 relative shadow-xl border border-border-muted">
+                        <img id="proto-main" src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200" alt="Prototype" class="w-full h-full object-cover transition-opacity duration-300">
+                        <div class="absolute top-4 left-4">
+                            <span id="proto-badge" class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full label font-bold text-white uppercase tracking-wider">Home Feed Widget</span>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <button onclick="switchProto(0)" class="aspect-video rounded-md overflow-hidden border-2 border-accent transition-all">
+                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400" class="w-full h-full object-cover">
+                        </button>
+                        <button onclick="switchProto(1)" class="aspect-video rounded-md overflow-hidden border-2 border-transparent transition-all opacity-60 hover:opacity-100">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400" class="w-full h-full object-cover">
+                        </button>
+                        <button onclick="switchProto(2)" class="aspect-video rounded-md overflow-hidden border-2 border-transparent transition-all opacity-60 hover:opacity-100">
+                            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=400" class="w-full h-full object-cover">
+                        </button>
+                        <button onclick="switchProto(3)" class="aspect-video rounded-md overflow-hidden border-2 border-transparent transition-all opacity-60 hover:opacity-100">
+                            <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=400" class="w-full h-full object-cover">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Etapa 5: Evaluar -->
+        <section id="evaluar" class="py-16 scroll-mt-12">
+            <div class="max-w-[960px] mx-auto px-6">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-10 h-10 rounded-full bg-canvas-overlay border border-border-default text-fg-muted flex items-center justify-center font-bold">5</div>
+                    <h1 class="h1 font-medium text-fg-default">Etapa: Evaluar & IA Fluency</h1>
+                </div>
+
+                <div class="v-border bg-canvas-overlay rounded-[10px] p-8 space-y-12 shadow-sm">
+                    <div class="space-y-4">
+                        <h2 class="h2 font-medium text-fg-default">Esquema de Integración GenAI</h2>
+                        <p class="body-sm text-fg-muted">Uso estratégico de IA Generativa para optimizar el flujo de trabajo en un 40%.</p>
+                    </div>
+                    
+                    <!-- Table GenAI -->
+                    <div class="v-border rounded-md overflow-hidden text-xs">
+                        <table class="w-full text-left">
+                            <thead class="bg-canvas-subtle border-b border-border-muted/50">
+                                <tr>
+                                    <th class="p-3 label uppercase text-fg-subtle">Etapa</th>
+                                    <th class="p-3 label uppercase text-fg-subtle">Integración</th>
+                                    <th class="p-3 label uppercase text-fg-subtle">Herramienta</th>
+                                    <th class="p-3 label uppercase text-fg-subtle">Modelo</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-border-muted/20">
+                                <tr class="hover:bg-canvas-subtle/30">
+                                    <td class="p-3 font-medium">Empatizar</td>
+                                    <td class="p-3 text-fg-muted">Síntesis de Research</td>
+                                    <td class="p-3 text-fg-default tooltip">
+                                        <span class="border-b border-dotted border-fg-subtle cursor-help">Claude.ai</span>
+                                        <span class="tooltiptext">Procesa transcripciones de entrevistas para obtener insights sin sesgo inicial.</span>
+                                    </td>
+                                    <td class="p-3 mono text-accent font-bold">Claude 3.5 Sonnet</td>
+                                </tr>
+                                <tr class="hover:bg-canvas-subtle/30">
+                                    <td class="p-3 font-medium">Prototipar</td>
+                                    <td class="p-3 text-fg-muted">UI Logic & Andes UI compliance</td>
+                                    <td class="p-3 text-fg-default tooltip">
+                                        <span class="border-b border-dotted border-fg-subtle cursor-help">Claude Code</span>
+                                        <span class="tooltiptext">Agente de codificación que asegura el cumplimiento de estándares técnicos.</span>
+                                    </td>
+                                    <td class="p-3 mono text-accent font-bold">Claude 3.5 Sonnet</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Findings & Iteraciones -->
+                    <div class="space-y-6 pt-8 border-t border-border-muted">
+                        <h4 class="h2 font-medium text-fg-default">Findings & Iteraciones</h4>
+                        <div class="space-y-8">
+                            <div class="space-y-4">
+                                <h5 class="caption font-bold uppercase tracking-widest text-[#1a7f37]">Validación Friends & Family (Humana)</h5>
+                                <div class="v-border bg-canvas-default rounded-md overflow-hidden text-xs">
+                                    <table class="w-full text-left">
+                                        <thead class="bg-canvas-subtle border-b border-border-muted">
+                                            <tr>
+                                                <th class="p-3 label">Usuario</th>
+                                                <th class="p-3 label">Hallazgo</th>
+                                                <th class="p-3 label">Ajuste</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-border-muted/20">
+                                            <tr>
+                                                <td class="p-3 font-bold">Roberto (Padre)</td>
+                                                <td class="p-3 text-fg-muted">Confundía sugerencia general con personal.</td>
+                                                <td class="p-3 italic text-fg-subtle">Se añadió avatar/nombre del recomendador.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Entregables -->
+        <section id="entregables" class="py-16 bg-canvas-subtle border-t border-border-muted scroll-mt-12">
+            <div class="max-w-[960px] mx-auto px-6 space-y-12">
+                <div class="text-center space-y-4">
+                    <h1 class="display-text font-medium text-fg-default">Entregables y Handoff</h1>
+                    <p class="text-fg-muted max-w-lg mx-auto">Activos listos para implementación siguiendo los estándares de Andes UI.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="v-border bg-canvas-default rounded-[10px] p-5 flex flex-col justify-between group transition-all hover:border-accent">
+                        <div class="space-y-2">
+                            <h4 class="body-sm font-bold text-fg-default uppercase">Figma Main File</h4>
+                            <p class="caption text-fg-muted">Prototipo interactivo y flujos de usuario completos.</p>
+                        </div>
+                        <div class="pt-6 flex items-center label text-fg-subtle uppercase font-bold cursor-pointer hover:text-accent">
+                            Ver archivo <i data-lucide="chevron-right" class="w-3 h-3 ml-1"></i>
+                        </div>
+                    </div>
+                    <div class="v-border bg-canvas-default rounded-[10px] p-5 flex flex-col justify-between group transition-all hover:border-[#1a7f37]">
+                        <div class="space-y-2">
+                            <h4 class="body-sm font-bold text-fg-default uppercase">Andes UI Audit</h4>
+                            <p class="caption text-fg-muted">Reporte de cumplimiento de accesibilidad y diseño.</p>
+                        </div>
+                        <div class="pt-6 flex items-center label text-fg-subtle uppercase font-bold cursor-pointer hover:text-[#1a7f37]">
+                            Checklist <i data-lucide="chevron-right" class="w-3 h-3 ml-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="h-[60px] border-t border-border-default bg-canvas-subtle px-6 flex items-center justify-between">
+        <span class="caption text-fg-muted">Mercado Libre UX Challenge - 2026</span>
+        <span class="caption text-[#8250df] font-medium uppercase tracking-widest">AI Fluency · Andes UI</span>
+    </footer>
+
+    <script>
+        // Init Icons
+        lucide.createIcons();
+
+        // Accordion functionality
+        function togglePlatform(id) {
+            const el = document.getElementById('platform-' + id);
+            const isOpen = el.getAttribute('data-open') === 'true';
+            
+            // Toggle
+            el.setAttribute('data-open', !isOpen);
+            
+            // Reset others if desired, but here we just toggle
+            const items = document.querySelectorAll('.accordion-item');
+            items.forEach(item => {
+                if (item.id !== 'platform-' + id) {
+                    item.setAttribute('data-open', 'false');
+                }
+            });
+            
+            lucide.createIcons();
+        }
+
+        // Prototype switch
+        function switchProto(index) {
+            const images = [
+                "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200",
+                "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+                "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1200",
+                "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1200"
+            ];
+            const titles = ["Home Feed Widget", "Share Menu Interaction", "Recommendation Card", "Post-Consumption Rating"];
+            
+            const mainImg = document.getElementById('proto-main');
+            const badge = document.getElementById('proto-badge');
+            
+            mainImg.style.opacity = 0;
+            setTimeout(() => {
+                mainImg.src = images[index];
+                badge.innerText = titles[index];
+                mainImg.style.opacity = 1;
+            }, 150);
+
+            // Update border states
+            const buttons = document.querySelectorAll('#prototipar button');
+            buttons.forEach((btn, i) => {
+                if(i === index) {
+                    btn.classList.add('border-accent');
+                    btn.classList.remove('border-transparent', 'opacity-60');
+                } else {
+                    btn.classList.remove('border-accent');
+                    btn.classList.add('border-transparent', 'opacity-60');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
